@@ -1,0 +1,68 @@
+﻿@model ConcertSystem.Models.Admin
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Admin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="artist" class="control-label"></label>
+                <input asp-for="artist" class="form-control" />
+                <span asp-validation-for="artist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateTime" class="control-label"></label>
+                <input asp-for="dateTime" class="form-control" />
+                <span asp-validation-for="dateTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="time" class="control-label"></label>
+                <input asp-for="time" class="form-control" />
+                <span asp-validation-for="time" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="language" class="control-label"></label>
+                <input asp-for="language" class="form-control" />
+                <span asp-validation-for="language" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="venue" class="control-label"></label>
+                <input asp-for="venue" class="form-control" />
+                <span asp-validation-for="venue" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="trending" class="control-label"></label>
+                <input asp-for="trending" class="form-control" />
+                <span asp-validation-for="trending" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
