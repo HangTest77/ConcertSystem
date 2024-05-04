@@ -68,7 +68,7 @@ namespace ConcertSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,name,artist,dateTime,time,language,venue,trending")] Admin admin)
+        public async Task<IActionResult> Create([Bind("Id,name,artist,description,dateTime,time,language,venue,trending,price")] Admin admin)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +78,9 @@ namespace ConcertSystem.Controllers
             }
             return View(admin);
         }
+
+
+
 
         // GET: Admins/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -100,7 +103,7 @@ namespace ConcertSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,name,artist,dateTime,time,language,venue,trending")] Admin admin)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,name,artist,description,dateTime,time,language,venue,trending,price,ImageFile")] Admin admin)
         {
             if (id != admin.Id)
             {
@@ -129,6 +132,9 @@ namespace ConcertSystem.Controllers
             }
             return View(admin);
         }
+
+
+
 
         // GET: Admins/Delete/5
         public async Task<IActionResult> Delete(int? id)

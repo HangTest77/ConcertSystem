@@ -24,6 +24,11 @@
                 <span asp-validation-for="artist" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
                 <label asp-for="dateTime" class="control-label"></label>
                 <input asp-for="dateTime" class="form-control" type="date" />
                 <span asp-validation-for="dateTime" class="text-danger"></span>
@@ -48,10 +53,35 @@
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
                 <label asp-for="trending" class="control-label"></label>
-                <input asp-for="trending" class="form-control" />
+                <input type="checkbox" id="trendingCheckbox" class="form-check-input" />
+                <input type="hidden" asp-for="trending" />
                 <span asp-validation-for="trending" class="text-danger"></span>
             </div>
+
+          
+
+
+
+            <script>
+                const checkbox = document.getElementById('trendingCheckbox');
+                checkbox.addEventListener('change', function () {
+                    const hiddenInput = document.querySelector('input[name="trending"]');
+                    hiddenInput.value = this.checked ? 'Yes' : 'No';
+                });
+
+                // Set initial value
+                const hiddenInput = document.querySelector('input[name="trending"]');
+                hiddenInput.value = checkbox.checked ? 'Yes' : 'No';
+            </script>
+
+          
 
             <div class="form-group mt-3">
                 <input type="submit" value="Create" class="btn btn-primary" />

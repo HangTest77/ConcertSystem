@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace ConcertSystem.Models
 {
@@ -17,6 +18,10 @@ namespace ConcertSystem.Models
         [DisplayName("Artist")]
         public String artist { get; set; }
 
+        [StringLength(50, MinimumLength = 1)]
+        [DisplayName("Concert Description")]
+        public String description { get; set; }
+
         [DisplayName("Date")]
         public String dateTime { get; set; }
 
@@ -29,8 +34,22 @@ namespace ConcertSystem.Models
         [DisplayName("Venue")]
         public String venue { get; set; }
 
-        [DisplayName("Trendings")]
+        [DisplayName("Trending?")]
         public String trending { get; set; }
+
+        [DisplayName("Ticket Price")]
+        public String price { get; set; }
+
+        //[DisplayName("Concert Poster")]
+        //public byte[] PosterData { get; set; } // Byte array to store image data
+
+        //[DisplayName("Poster Content Type")]
+        //public string PosterContentType { get; set; } // Store image content type
+
+        //[DisplayName("Poster File")]
+        //public IFormFile ImageFile { get; set; }
+
+
 
         public Admin() { }
     }
